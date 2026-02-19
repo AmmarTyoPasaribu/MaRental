@@ -34,12 +34,19 @@ RUN composer dump-autoload --optimize
 # Build Tailwind CSS + JS
 RUN npm run build
 
-# Cache Laravel config & views
-RUN php artisan config:cache || true
-RUN php artisan view:cache || true
+# Create required Laravel storage directories & set permissions
+RUN mkdir -p storage/framework/sessions \
+    storage/framework/views \
+    storage/framework/cache/data \
+    storage/logs \
+    bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache \
+    && chown -R www-data:www-data storage bootstrap/cache
 
 # Expose port
 EXPOSE 10000
 
-# Start server
-CMD php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
+# Start: cache config at RUNTIME (not build time) so env vars are available
+CMD php artisan config:cache && \
+    php artisan view:cache && \
+    php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
