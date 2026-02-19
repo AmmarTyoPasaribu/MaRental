@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Custom Styles ─── */
+body { font-family: 'Inter', sans-serif; }
+.glass { background: rgba(15, 0, 17, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); }
+.glass-card { background: rgba(20, 5, 25, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+.gradient-hero { background: linear-gradient(135deg, #0f0011 0%, #1a0a2e 25%, #2d1b46 50%, #500724 75%, #0f0011 100%); }
+.gradient-btn { background: linear-gradient(135deg, #9d174d 0%, #be185d 50%, #db2777 100%); }
+.gradient-btn:hover { background: linear-gradient(135deg, #be185d 0%, #db2777 50%, #ec4899 100%); }
+.card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 50px rgba(157, 23, 77, 0.15); border-color: rgba(236, 72, 153, 0.3); }
+.img-zoom { transition: transform 0.5s ease; }
+.img-zoom:hover { transform: scale(1.08); }
+.animate-fade-in { animation: fadeIn 0.6s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.text-glow { text-shadow: 0 0 40px rgba(236, 72, 153, 0.4); }
+input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px #1a0a1f inset !important; -webkit-text-fill-color: #fff !important; }
