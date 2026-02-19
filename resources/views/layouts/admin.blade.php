@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MaRental Admin</title>
-  <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon.ico') }}" />
+  <link rel="icon" type="image/png" href="{{ asset('assets/favicon.png') }}" />
   @vite(['resources/css/app.css', 'resources/js/app.js'])
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -17,9 +17,7 @@
       <!-- Brand -->
       <div class="px-6 py-5 border-b border-white/10">
         <a href="{{ route('admin.dashboard.index') }}" class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl gradient-btn flex items-center justify-center">
-            <i class="bi bi-speedometer2 text-white text-lg"></i>
-          </div>
+          <img src="{{ asset('assets/logo.png') }}" alt="MaRental" class="w-10 h-10 rounded-xl object-contain">
           <div>
             <h1 class="text-lg font-black"><span class="text-brand-400">MaR</span>ental</h1>
             <p class="text-[10px] text-white/40 uppercase tracking-widest">Admin Panel</p>
